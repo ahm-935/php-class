@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 21, 2026 at 06:09 AM
+-- Generation Time: Nov 03, 2026 at 07:30 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -34,14 +34,6 @@ CREATE TABLE `products` (
   `price` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `products`
---
-
-INSERT INTO `products` (`id`, `product_name`, `manufacturer_id`, `price`) VALUES
-(7, 'Chair', 100, 1000),
-(8, 'Table', 101, 1500);
-
 -- --------------------------------------------------------
 
 --
@@ -68,7 +60,7 @@ INSERT INTO `results` (`id`, `student_id`, `score`, `exam_type`) VALUES
 (6, 1, 90, 'Final'),
 (7, 5, 70, 'Final'),
 (8, 8, 79, 'Final'),
-(9, 2, 20, 'Mid-1'),
+(9, 5, 20, 'Mid-1'),
 (10, 5, 39, 'Mid-1'),
 (11, 7, 28, 'Mid-1'),
 (12, 8, 93, 'Mid-1'),
@@ -76,7 +68,7 @@ INSERT INTO `results` (`id`, `student_id`, `score`, `exam_type`) VALUES
 (14, 2, 20, 'Mid-2'),
 (15, 5, 39, 'Mid-2'),
 (16, 7, 59, 'Mid-2'),
-(17, 7, 65, 'Final');
+(17, 7, 91, 'Final');
 
 -- --------------------------------------------------------
 
@@ -101,9 +93,9 @@ INSERT INTO `students` (`id`, `full_name`, `email`, `address`, `is_inactive`) VA
 (2, 'Mithu', 'truysjg@kj.hb', 'Rangpur', 0),
 (5, 'Raju', 'raju@mail.info', 'Dhaka', 1),
 (6, 'Munna', 'raju@xmple.com', 'Rajshahi', 1),
-(7, 'Eimrul', 'eimrul@mail.info', NULL, 0),
-(8, 'Tasnim', 'tasnim@mail.info', NULL, 0),
-(9, 'Noushin', 'noushin@mail.info', NULL, 0);
+(7, 'Eimrul', 'eimrul@mail.info', 'Rangpur', 0),
+(8, 'Tasnim', 'tasnim@mail.info', 'Dhaka', 0),
+(9, 'Noushin', 'noushin@mail.info', 'RangpuR', 0);
 
 --
 -- Triggers `students`
@@ -150,7 +142,11 @@ INSERT INTO `student_logs` (`id`, `student_id`, `status`, `time`) VALUES
 (6, 12, 'Added', '2026-05-19 06:44:30'),
 (7, 13, 'Added', '2026-05-19 06:44:32'),
 (8, 13, 'Deleted', '2026-05-19 06:45:05'),
-(9, 12, 'Deleted', '2026-05-19 06:45:15');
+(9, 12, 'Deleted', '2026-05-19 06:45:15'),
+(10, 7, 'Updated', '2026-06-08 03:48:09'),
+(11, 7, 'Updated', '2026-06-08 03:48:16'),
+(12, 9, 'Updated', '2026-06-08 03:48:28'),
+(13, 8, 'Updated', '2026-06-08 03:48:41');
 
 -- --------------------------------------------------------
 
@@ -230,7 +226,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `results`
@@ -248,7 +244,7 @@ ALTER TABLE `students`
 -- AUTO_INCREMENT for table `student_logs`
 --
 ALTER TABLE `student_logs`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `users`
